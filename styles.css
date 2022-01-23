@@ -15,71 +15,70 @@ body {
 .main-circle {
     width: 250px;
     height: 250px;
-    border: 2px solid #fff;
+    border: 2px solid rgb(1, 202, 209);
     border-radius: 50%;
     position: relative;
+    animation: rotate 4800ms 2600ms infinite linear;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotateZ(360deg);
+    }
 }
 
 .circle {
-    width: 10px;
+    width: 1px;
     height: 100%;
     position: absolute;
-    /* background-color: #fff; */
-    left: calc(50% - 5px);
-    --time: 0;
+    left: calc(50% - 1px);
+    --delay: 0;
+    background-color: rgb(0, 247, 255);
 }
 
-
-/* 
-.circle::after {
+div.circle::after {
     position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-} */
-
-.main-circle div::after {
-    position: absolute;
-    background-color: #fff;
+    background-color: rgb(2, 255, 255);
     border-radius: 50%;
     content: '';
     width: 20px;
     height: 20px;
-    right: -5px;
+    right: -10px;
     top: 0;
-    animation: first 1200ms var(--time) infinite ease-in-out alternate-reverse;
+    animation: sm-circle 1200ms var(--delay) infinite ease-in-out alternate;
 }
 
-@keyframes first {
+@keyframes sm-circle {
     to {
-        top: calc(100% - 20px);
+        transform: translateY(225px);
     }
-}
-
-.main-circle div:first-child {
-    --time: 2200ms;
 }
 
 .main-circle div:nth-child(2) {
     transform: rotateZ(90deg);
-    --time: 1600ms;
+    --delay: 1600ms;
 }
 
 .main-circle div:nth-child(3) {
     transform: rotateZ(30deg);
-    --time: 2000ms;
+    --delay: 2000ms;
 }
 
 .main-circle div:nth-child(4) {
     transform: rotateZ(60deg);
-    --time: 1800ms;
+    --delay: 1800ms;
+}
+
+.main-circle div:first-child {
+    --delay: 2200ms;
 }
 
 .main-circle div:nth-child(5) {
     transform: rotateZ(-30deg);
-    --time: 2400ms;
+    --delay: 2400ms;
 }
 
 .main-circle div:nth-child(6) {
     transform: rotateZ(-60deg);
-    --time: 2600ms;
+    --delay: 2600ms;
 }
