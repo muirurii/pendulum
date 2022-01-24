@@ -18,7 +18,7 @@ body {
     border: 2px solid rgb(1, 202, 209);
     border-radius: 50%;
     position: relative;
-    animation: rotate 4800ms 2600ms infinite linear;
+    animation: rotate 8000ms 1600ms infinite linear;
 }
 
 @keyframes rotate {
